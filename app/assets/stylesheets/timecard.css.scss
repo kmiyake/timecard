@@ -1,0 +1,18 @@
+.btn-github {
+  background-color: #333333;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #444444;
+    color: #eeeeee;
+  }
+}
+
+.home-index {
+  .container {
+    .jumbotron {
+      text-align: center;
+      background-color: #ffffff;
+    }
+  }
+}

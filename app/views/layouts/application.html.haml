@@ -5,5 +5,23 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
-    = yield
+  %body{ class: "#{controller.controller_name} #{controller.controller_name}-#{controller.action_name}" }
+    %nav.navbar.navbar-default.navbar-static-top{ role: "navigation" }
+      .container
+        .navbar-header
+          %button{ type: "button", class: "navbar-toggle", "data-toggle" => "collapse", "data-target" => "#navbar-collapse" }
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "Timecard", root_path, class: "navbar-brand"
+        #navbar-collapse.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              %li
+                = link_to "Logout", destroy_user_session_path, method: :delete
+            - else 
+              %li
+                = link_to "Login with Github", user_omniauth_authorize_path(:github)
+    .container
+      = yield

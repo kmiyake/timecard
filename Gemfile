@@ -39,14 +39,18 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
+# Authentication
 gem "devise"
+gem "omniauth-github"
+
 gem "haml-rails"
 gem "simple_form"
 gem "rails-assets-backbone"
 gem "rails-assets-marionette"
 gem "rails-assets-bootstrap", "3.1.1"
 gem "rails-assets-fontawesome"
+gem "rails_config"
+
 group :development do
   gem "erb2haml"
   gem "pry-rails"
